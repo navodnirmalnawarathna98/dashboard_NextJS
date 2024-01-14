@@ -1,3 +1,17 @@
+
+// If you run into any issues while seeding your 
+// database and want to run the script again, you 
+// can drop any existing tables by running 
+// DROP TABLE tablename in your database query 
+// interface. See the executing queries section below 
+// for more details. But be careful, 
+// this command will delete the tables and all their
+//  data. It's ok to do this with your example app 
+//  since you're working with placeholder data,
+//   but you shouldn't run this command in a 
+//   production app
+
+
 const { db } = require('@vercel/postgres');
 const {
   invoices,
@@ -8,6 +22,7 @@ const {
 const bcrypt = require('bcrypt');
 
 async function seedUsers(client) {
+
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
     // Create the "users" table if it doesn't exist
